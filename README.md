@@ -13,5 +13,5 @@ Test EPAC model for Azure Policy
 4. No he federado (probar sin este paso) <https://azure.github.io/enterprise-azure-policy-as-code/ci-cd-app-registrations/>
 5. Modificamos el fichero C:\Github\Personal\000. MyGmailSuscription\EPAC-BSANT-PROD\bsant-enterprise-azure-policy-as-code\StarterKit\Definitions-GitHub-Flow\global-settings.jsonc siguiendo la configuracion de ejemplo <https://azure.github.io/enterprise-azure-policy-as-code/ci-cd-app-registrations/> y el blog de Rafa.
     5.1. New-Guid para meterlo en la linea 3    "pacOwnerId": 
-     
+6. He intentado utilizar este comando: New-PipelinesFromStarterKit -StarterKitFolder .\StarterKit -PipelinesFolder ..\bsant-epac-jasl\.github\workflows -PipelineType GitHubActions -BranchingFlow github -ScriptType Scripts Pero he tenido que poner Module al final porque no me descargaba la parte de scripts completa.
 
