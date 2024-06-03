@@ -14,4 +14,5 @@ Test EPAC model for Azure Policy
 5. Modificamos el fichero C:\Github\Personal\000. MyGmailSuscription\EPAC-BSANT-PROD\bsant-enterprise-azure-policy-as-code\StarterKit\Definitions-GitHub-Flow\global-settings.jsonc siguiendo la configuracion de ejemplo <https://azure.github.io/enterprise-azure-policy-as-code/ci-cd-app-registrations/> y el blog de Rafa.
     5.1. New-Guid para meterlo en la linea 3    "pacOwnerId": 
 6. He intentado utilizar este comando: New-PipelinesFromStarterKit -StarterKitFolder .\StarterKit -PipelinesFolder ..\bsant-epac-jasl\.github\workflows -PipelineType GitHubActions -BranchingFlow github -ScriptType Scripts Pero he tenido que poner Module al final porque no me descargaba la parte de scripts completa.
-7. En cada Entorno de GITHUB. EPAC-DEV y EPAC-PROD creamos las variables de entorno. AZURE_CLIENT_ID (AppID) y AZURE_TENANT_ID 
+7. En cada Entorno de GITHUB. EPAC-DEV y EPAC-PROD creamos las variables de entorno. AZURE_CLIENT_ID (AppID) y AZURE_TENANT_ID
+8. EN Settings -> Secrets and variables -> Actions se debe añadir los valores: AZURE_CLIENT_ID, AZURE_TENANT_ID.
