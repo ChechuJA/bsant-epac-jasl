@@ -1,0 +1,38 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/global-settings-schema.json",
+    "pacOwnerId": "23f63b83-5f1a-4fd1-a596-87ac2d713db6",
+    "pacEnvironments": [
+      {
+        "pacSelector": "epac-dev",
+        "cloud": "AzureCloud",
+        "tenantId": "6df7235b-9451-436f-a51c-319ec465ccfe",
+        "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/epac-dev",
+        "desiredState": {
+          "strategy": "OwnerOnly",
+          "keepDfcSecurityAssignments": true
+      },
+      "managedIdentityLocation": "westeurope"
+      },
+      {
+        "pacSelector": "epac-prod",
+        "cloud": "AzureCloud",
+        "tenantId": "6df7235b-9451-436f-a51c-319ec465ccfe",
+        "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/epac-prod",
+        "desiredState": {
+          "strategy": "OwnerOnly",
+          "keepDfcSecurityAssignments": true
+      },
+      "managedIdentityLocation": "westeurope"
+      }
+    ]
+    //    ,
+    //     "managedIdentityLocations": {
+    //         "*": "eastus2"
+    //     },
+    //     "globalNotScopes": {
+    //        "tenant": [
+    //            "/providers/Microsoft.Management/managementGroups/mg-epac-dev"
+    //        ]
+    //    }
+  }
+  
