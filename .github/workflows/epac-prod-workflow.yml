@@ -37,7 +37,8 @@ jobs:
     with:
       pacEnvironmentSelector: epac-prod
       planGitHubEnvironment: EPAC-PROD
-      PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-epac-prod"
+      PAC_INPUT_FOLDER: .
+      #PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-epac-prod"
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
 
@@ -49,6 +50,7 @@ jobs:
     with:
       pacEnvironmentSelector: epac-prod
       planGitHubEnvironment: EPAC-PROD
-      PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-epac-prod"
+      PAC_INPUT_FOLDER: .
+      #PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-epac-prod"
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
