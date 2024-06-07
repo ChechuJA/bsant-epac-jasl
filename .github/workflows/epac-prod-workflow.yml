@@ -9,7 +9,7 @@ on:
       - closed
     paths:
       - 'Definitions/**'
-  workflow_dispatch:
+  workflow_dispatch: # Manual executions
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
