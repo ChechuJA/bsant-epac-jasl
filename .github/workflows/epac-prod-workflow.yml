@@ -1,5 +1,5 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC epac-prod Workflow
+name: EPAC PROD Workflow
 
 on:
   pull_request:
@@ -9,6 +9,7 @@ on:
       - closed
     paths:
       - 'Definitions/**'
+  workflow_dispatch: # Manual executions
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
