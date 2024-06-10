@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - feature/**
+      - main # borrar despues de pruebas.
     paths:
       - 'Definitions/**'
       - '.github/**'
