@@ -57,8 +57,8 @@ jobs:
 
   planProd:
     name: Plan epac-prod
-    #needs: plan
-    needs: [deployPolicy, deployRoles]
+    needs: plan
+    #needs: [deployPolicy, deployRoles]
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: epac-prod
