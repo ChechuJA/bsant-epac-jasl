@@ -53,6 +53,11 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           enable-AzPSSession: true
           allow-no-subscriptions: true
+      #lineas añadidas    run az commands, depurar EPAC-PROD
+      - name: 'Run az commands'
+        run: |
+          az account show
+          az group list
 
       - name: Plan
         uses: azure/powershell@v2
