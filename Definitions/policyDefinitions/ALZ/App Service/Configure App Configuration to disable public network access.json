@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-definition-schema.json",
   "name": "73290fa2-dfa7-4bbb-945d-a5e23b75df2c",
   "properties": {
-    "displayName": "Configure App Configuration to disable public network access",
+    "displayName": "JASL-Configure App Configuration to disable public network access",
     "policyType": "BuiltIn",
     "mode": "Indexed",
     "description": "Disable public network access for App Configuration so that it isn't accessible over the public internet. This configuration helps protect them against data leakage risks. You can limit exposure of the your resources by creating private endpoints instead. Learn more at: https://aka.ms/appconfig/private-endpoint.",
