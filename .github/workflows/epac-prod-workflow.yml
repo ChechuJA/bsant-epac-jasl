@@ -25,7 +25,7 @@ jobs:
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: epac-prod
-      planGitHubEnvironment: EPAC-DEV
+      planGitHubEnvironment: EPAC-PROD
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
@@ -37,7 +37,7 @@ jobs:
     uses: ./.github/workflows/deploy-policy.yml
     with:
       pacEnvironmentSelector: epac-prod
-      planGitHubEnvironment: EPAC-DEV
+      planGitHubEnvironment: EPAC-PROD
       PAC_INPUT_FOLDER: .
       #PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-epac-prod"
       PAC_DEFINITIONS_FOLDER: ./Definitions
@@ -50,7 +50,7 @@ jobs:
     uses: ./.github/workflows/deploy-roles.yml
     with:
       pacEnvironmentSelector: epac-prod
-      planGitHubEnvironment: EPAC-DEV
+      planGitHubEnvironment: EPAC-PROD
       PAC_INPUT_FOLDER: .
       #PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-epac-prod"
       PAC_DEFINITIONS_FOLDER: ./Definitions
