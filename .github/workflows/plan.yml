@@ -49,6 +49,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
+          # Utilizamos las el archivo credentials y con esto si funciona el EPAC-PROD
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
           allow-no-subscriptions: true
