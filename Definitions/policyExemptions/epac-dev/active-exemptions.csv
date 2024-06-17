@@ -1,1 +1,2 @@
 name,displayName,description,exemptionCategory,expiresOn,scope,policyAssignmentId,policyDefinitionReferenceIds,metadata,assignmentScopeValidation
+dev-sandbox,exem-dev-sandbox,descriptionexemp,,17062024,dev-sandbox,/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policyassignments/enforce-guard-akv-cis2.0,,,dev-sandbox
