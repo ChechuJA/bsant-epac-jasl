@@ -22,6 +22,7 @@ on:
       deployRoleChanges:
         description: "The result of evaluating if a role deployment is required"
         value: ${{ jobs.plan.outputs.deployRoleChanges }}
+  workflow_dispatch: # Manual executions
 
 env:
   pacEnvironmentSelector: ${{ inputs.pacEnvironmentSelector }}

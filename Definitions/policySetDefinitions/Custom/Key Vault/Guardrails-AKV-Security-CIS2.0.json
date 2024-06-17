@@ -1,0 +1,113 @@
+{
+  "name": "Guardrails-AKV-Security-CIS2.0",
+  "properties": {
+    "policyType": "Custom",
+    "displayName": "Guardrails-AKV-Security-CIS2.0",
+    "description": "This initiative groups all key vault policies defined by the SCC (CIS 2.0) to ensure compliance and security of their key vault.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Key Vault",
+      "createdBy": "chechu"
+    },
+    "parameters": {
+      "effectAKVKeyExpirationDate": {
+        "type": "string",
+        "metadata": {
+          "displayName": "EffectAKVKeyExpirationDate",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": ["Audit", "Deny", "Disabled"],
+        "defaultValue": "Audit"
+      },
+      "effectAKVSecretExpirationDate": {
+        "type": "string",
+        "metadata": {
+          "displayName": "EffectAKVSecretExpirationDate",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": ["Audit", "Deny", "Disabled"],
+        "defaultValue": "Audit"
+      },
+      "effectAKVRBACpermissionModel": {
+        "type": "string",
+        "metadata": {
+          "displayName": "EffectAKVRBACpermissionModel",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": ["Audit", "Deny", "Disabled"],
+        "defaultValue": "Audit"
+      },
+      "effectAKVSoftDeleteEnabled": {
+        "type": "string",
+        "metadata": {
+          "displayName": "EffectAKVSoftDeleteEnabled",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": ["Audit", "Deny", "Disabled"],
+        "defaultValue": "Audit"
+      },
+      "effectAKVDeletionProtectionEnabled": {
+        "type": "string",
+        "metadata": {
+          "displayName": "EffectAKVDeletionProtectionEnabled",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": ["Audit", "Deny", "Disabled"],
+        "defaultValue": "Audit"
+      }
+    },
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "Key Vault keys should have an expiration date",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('effectAKVKeyExpirationDate')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "Key Vault secrets should have an expiration date",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/98728c90-32c7-4049-8429-847dc0f4fe37",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('effectAKVSecretExpirationDate')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "Azure Key Vault should use RBAC permission model",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('effectAKVRBACpermissionModel')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "Key vaults should have soft delete enabled",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('effectAKVSoftDeleteEnabled')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "Key vaults should have deletion protection enabled",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('effectAKVDeletionProtectionEnabled')]"
+          }
+        },
+        "groupNames": []
+      }
+    ],
+    "policyDefinitionGroups": null
+  }
+}
