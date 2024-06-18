@@ -1,2 +1,2 @@
-name,displayName,description,exemptionCategory,expiresOn,scope,policyDefinitionId,policyDefinitionReferenceIds,metadata,assignmentScopeValidation
-mit-001,mit-epac-dev-policy-sta-001,Prueba de Mitigacion sobre una politica directamente,"Mitigated","2026-12-31T15:59:00.0000000Z",/providers/Microsoft.Management/managementGroups/epac-dev,/providers/Microsoft.Management/managementGroups/epac-dev/providers/Microsoft.Authorization/policyDefinitions/MSS-disable-localAuth-jasl,,,Default
+name,displayName,description,exemptionCategory,expiresOn,scope,policyAssignmentId,policyDefinitionReferenceIds,metadata,assignmentScopeValidation
+mit-001,mit-epac-dev-policy-sta-001,Prueba de Mitigacion sobre una politica directamente,"Mitigated","2026-12-31T15:59:00.0000000Z",/providers/Microsoft.Management/managementGroups/epac-dev,/providers/Microsoft.Management/managementGroups/epac-dev/providers/Microsoft.Authorization/policyAssignments/c882714599744588a8532018,,,Default
