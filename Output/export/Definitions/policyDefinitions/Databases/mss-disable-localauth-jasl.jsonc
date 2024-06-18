@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-definition-schema.json",
+  "name": "MSS-disable-localAuth-jasl",
+  "properties": {
+    "displayName": "MSS Disable localAuth jasl.",
+    "description": "Disable local authentication methods so that your MSS DBforMySQL.",
+    "mode": "Indexed",
+    "metadata": {
+      "category": "Databases",
+      "version": "1.0.0",
+      "deployedBy": "epac/23f63b83-5f1a-4fd1-a596-87ac2d713db6/epac-prod"
+    },
+    "parameters": {
+      "effect": {
+        "allowedValues": [
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny",
+        "metadata": {
+          "description": "Enable or disable the execution of the policy",
+          "displayName": "Effect"
+        },
+        "type": "string"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.DBforMySQL/flexibleServers"
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.DBforMySQL/flexibleServers/configurations",
+          "existenceCondition": {
+            "field": "Microsoft.DBForMySql/flexibleServers/configurations/value",
+            "equals": "ON"
+          },
+          "name": "require_secure_transport"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+  "nodeName": "/root",
+  "definitionEntry": {
+    "policyName": "73290fa2-dfa7-4bbb-945d-a5e23b75df2c",
+    "displayName": "JASL-Configure App Configuration to disable public network access",
+    "nonComplianceMessages": [
+      {
+        "policyDefinitionReferenceId": null,
+        "message": "EPAC-JASLNONCOMPLIANCE.Configure App Configuration to disable public network access."
+      }
+    ]
+  },
+  "assignment": {
+    "name": "jasl-epac-Assign App",
+    "displayName": "jasl-epac-Assign App Configuration to disable public network access",
+    "description": "jasl-epac-Assign Disable public network access for App Configuration so that it isn't accessible over the public internet. This configuration helps protect them against data leakage risks. You can limit exposure of the your resources by creating private endpoints instead. Learn more at: https://aka.ms/appconfig/private-endpoint."
+  },
+  "children": [
+    {
+      "nodeName": "/child-0",
+      "metadata": {
+        "assignedBy": "epac/23f63b83-5f1a-4fd1-a596-87ac2d713db6/epac-dev"
+      },
+      "scope": {
+        "epac-dev": [
+          "/providers/Microsoft.Management/managementGroups/epac-dev"
+        ]
+      }
+    },
+    {
+      "nodeName": "/child-1",
+      "metadata": {
+        "assignedBy": "epac/23f63b83-5f1a-4fd1-a596-87ac2d713db6/epac-prod"
+      },
+      "scope": {
+        "epac-prod": [
+          "/providers/Microsoft.Management/managementGroups/epac-prod"
+        ]
+      }
+    }
+  ]
+}

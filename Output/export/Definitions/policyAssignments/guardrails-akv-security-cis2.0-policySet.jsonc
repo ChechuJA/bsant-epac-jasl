@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+  "nodeName": "/root",
+  "definitionEntry": {
+    "policySetName": "Guardrails-AKV-Security-CIS2.0",
+    "displayName": "Guardrails-AKV-Security-CIS2.0",
+    "nonComplianceMessages": [
+      {
+        "policyDefinitionReferenceId": null,
+        "message": "Non-compliance detected. The resource does not comply with the 'Enforce-Guardrails-AKV-assignment-to-scc-root-foundation' initiative. Please review the security policies recommended by CIS 2.0 and adjust the resource configuration accordingly."
+      }
+    ]
+  },
+  "assignment": {
+    "name": "Enforce-Guard-AKV-CIS2.0",
+    "displayName": "Enforce-Guardrails-AKV-assignment-to-scc-root-foundation",
+    "description": "This initiative applies security policies recommended by CIS 2.0 to enhance the security of Azure resources."
+  },
+  "metadata": {
+    "assignedBy": "Chechu",
+    "category": "Key Vault"
+  },
+  "scope": {
+    "epac-prod": [
+      "/providers/Microsoft.Management/managementGroups/epac-prod"
+    ],
+    "epac-dev": [
+      "/providers/Microsoft.Management/managementGroups/epac-dev"
+    ]
+  }
+}
