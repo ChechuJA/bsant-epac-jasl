@@ -1,2 +1,2 @@
 name,displayName,description,exemptionCategory,expiresOn,scope,policyAssignmentId,policyDefinitionReferenceIds,metadata,assignmentScopeValidation
-dev-sandbox-001,exem-dev-sandbox,descriptionexemp,"Waiver","2026-12-31T23:59:00.0000000Z",dev-sandbox,/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policyassignments/enforce-guard-akv-cis2.0,,,Default
+dev-sandbox-001,exem-dev-sandbox,descriptionexemp,"Waiver","2026-12-31T23:59:00.0000000Z",/providers/Microsoft.Management/managementGroups/dev-sandbox,/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policyassignments/enforce-guard-akv-cis2.0,,,Default
