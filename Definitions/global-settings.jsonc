@@ -3,6 +3,17 @@
     "pacOwnerId": "23f63b83-5f1a-4fd1-a596-87ac2d713db6",
     "pacEnvironments": [
       {
+        "pacSelector": "epac-dev",
+        "cloud": "AzureCloud",
+        "tenantId": "6df7235b-9451-436f-a51c-319ec465ccfe",
+        "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/epac-dev",
+        "desiredState": {
+          "strategy": "ownedOnly",
+          "keepDfcSecurityAssignments": true
+      },
+      "managedIdentityLocation": "westeurope"
+      },
+      {
         "pacSelector": "epac-dev2",
         "cloud": "AzureCloud",
         "tenantId": "6df7235b-9451-436f-a51c-319ec465ccfe",
