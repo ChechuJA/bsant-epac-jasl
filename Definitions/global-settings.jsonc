@@ -14,6 +14,17 @@
       "managedIdentityLocation": "westeurope"
       },
       {
+        "pacSelector": "epac-dev",
+        "cloud": "AzureCloud",
+        "tenantId": "6df7235b-9451-436f-a51c-319ec465ccfe",
+        "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/epac-dev2",
+        "desiredState": {
+          "strategy": "ownedOnly",
+          "keepDfcSecurityAssignments": true
+      },
+      "managedIdentityLocation": "westeurope"
+      },
+      {
         "pacSelector": "epac-prod",
         "cloud": "AzureCloud",
         "tenantId": "6df7235b-9451-436f-a51c-319ec465ccfe",

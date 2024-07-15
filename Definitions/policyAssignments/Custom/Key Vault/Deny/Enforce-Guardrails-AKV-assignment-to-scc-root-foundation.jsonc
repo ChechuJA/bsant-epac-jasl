@@ -3,7 +3,8 @@
     "nodeName": "/Corp/",
     "scope": {
         "epac-dev": [ // Replace with your EPAC environment name and validate the management group listed below exists
-            "/providers/Microsoft.Management/managementGroups/epac-dev"
+            "/providers/Microsoft.Management/managementGroups/epac-dev",
+            "/providers/Microsoft.Management/managementGroups/epac-dev2"
         ],
         "epac-prod": [ // Replace with your EPAC environment name and validate the management group listed below exists
             "/providers/Microsoft.Management/managementGroups/epac-prod"
