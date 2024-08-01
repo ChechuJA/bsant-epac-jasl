@@ -1,5 +1,5 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC DEV Workflow
+name: EPAC DEV2 Workflow
 
 on:
   push:
@@ -9,6 +9,16 @@ on:
       - 'Definitions/**'
       - '.github/**'
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to DEV2'
+        required: true
+        type: choice
+        options:
+          - dev
+          - dev2
+          - both
+        default: 'dev'
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
@@ -21,6 +31,7 @@ permissions:
 jobs:
   plan:
     name: Plan epac-dev2
+    if: github.event.inputs.environment == 'test-dev2' || github.event.inputs.environment == 'both'
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: epac-dev2
