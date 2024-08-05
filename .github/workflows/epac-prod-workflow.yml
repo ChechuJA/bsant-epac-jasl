@@ -53,7 +53,7 @@ jobs:
           await github.rest.actions.createWorkflowApproval({
             owner,
             repo,
-            run_id: context. runId,
+            run_id: context.runId,
             event_type : 'APPROVE'
           })
 
