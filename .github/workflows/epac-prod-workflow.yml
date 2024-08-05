@@ -34,10 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: plan
     steps :
-    # - name: Use Node.js 16
-    #   uses: actions/setup-node@v2
-    #   with:
-    #     node-version: 16
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
     - name: Wait for approval
       uses: actions/github-script@v5
       with :
