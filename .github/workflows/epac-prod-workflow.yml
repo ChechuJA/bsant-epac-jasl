@@ -34,10 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: plan
     steps :
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
+    # - name: Use Node.js 16
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: 16
     - name: Wait for approval
       uses: actions/github-script@v5
       with :
@@ -48,14 +48,14 @@ jobs:
             owner,
             repo,
             issue_number: number,
-            body: 'Please review the plan and approve the workflow if everything is correct. '
-          )}
+            body: 'Please review the plan and approve the workflow if everything is correct.'
+          })
           await github.rest.actions.createWorkflowApproval({
             owner,
             repo,
-            run id: context. runld,
-            event _ type : 'APPROVE'
-          )}
+            run_id: context. runId,
+            event_type : 'APPROVE'
+          })
 
   deployPolicy:
     name: Deploy epac-prod Policy Changes
