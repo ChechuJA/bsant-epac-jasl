@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-definition-schema.json",
+  "name": "bs-aps-DenyEncryptInTransitSSLEnforced",
+  "properties": {
+    "displayName": "bs-aps-DenyEncryptInTransitSSLEnforced",
+    "description": "Azure Database for MySQL flexible servers supports connecting your Azure Database for MySQL flexible servers to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
+    "mode": "Indexed",
+    "metadata": {
+      "category": "Cosmos DB",
+      "version": "1.0.0",
+      "deployedBy": "epac/23f63b83-5f1a-4fd1-a596-87ac2d713db6/epac-prod"
+    },
+    "parameters": {
+      "effect": {
+        "allowedValues": [
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Disabled",
+        "metadata": {
+          "description": "Deny or Disabled the execution of the Policy",
+          "displayName": "Effect"
+        },
+        "type": "string"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.DBforMySQL/flexibleServers"
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.DBforMySQL/flexibleServers/configurations",
+          "existenceCondition": {
+            "field": "Microsoft.DBForMySql/flexibleServers/configurations/value",
+            "equals": "ON"
+          },
+          "name": "require_secure_transport"
+        }
+      }
+    }
+  }
+}

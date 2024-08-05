@@ -1,0 +1,72 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
+    "documentAssignments": {
+        "environmentCategories": [
+            {
+                "pacEnvironment": "epac-prod",
+                "environmentCategory": "prod",
+                "scopes": [
+                    "Management Group: chechu-Prod"
+                ],
+                "representativeAssignments": [
+                    {
+                        "shortName": "AKV",
+                        "id": "/providers/microsoft.management/managementgroups/epac-prod/providers/microsoft.authorization/policyassignments/enforce-guard-akv-cis2.0"
+                    },
+                    {
+                        "shortName": "CDB-jasl",
+                        "id": "/providers/microsoft.management/managementgroups/epac-prod/providers/microsoft.authorization/policyassignments/2a8106af4202427a948a2dab"
+                    }
+                ]
+            },
+            {
+                "pacEnvironment": "epac-dev",
+                "environmentCategory": "nonprod",
+                "scopes": [
+                    "Management Group: chechu-NonProd"
+                ],
+                "representativeAssignments": [
+                    {
+                        "shortName": "AKV",
+                        "id": "/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policyassignments/enforce-guard-akv-cis2.0"
+                    },
+                    {
+                        "shortName": "CDB-jasl",
+                        "id": "/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policyassignments/2a8106af4202427a948a2dab"
+                    }
+                ]
+            }
+        ],
+        "documentationSpecifications": [
+            {
+                "fileNameStem": "chechu-policy-effects",
+                "environmentCategories": [
+                    "prod",
+                    "nonprod"
+                ],
+                "title": "chechu Policy effects"
+            }
+        ]
+    },
+    "documentPolicySets": [
+        {
+            "pacEnvironment": "epac-dev",
+            "fileNameStem": "chechu-compliance-initiatives",
+            "title": "Document Initiatives",
+            "policySets": [
+                {
+                    "shortName": "AKV",
+                    "id": "/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policysetdefinitions/guardrails-akv-security-cis2.0"
+                },
+                {
+                    "shortName": "CDB-jasl",
+                    "id": "/providers/microsoft.management/managementgroups/epac-dev/providers/microsoft.authorization/policysetdefinitions/335dad91f1b74f7f9d90f154"
+                }
+            ],
+            "environmentColumnsInCsv": [
+                "prod",
+                "nonprod"
+            ]
+        }
+    ]
+}

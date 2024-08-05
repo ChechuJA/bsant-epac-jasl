@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+  "nodeName": "/root",
+  "definitionEntry": {
+    "policyName": "bs-aps-DenyEncryptInTransitSSLEnforced",
+    "displayName": "bs-aps-DenyEncryptInTransitSSLEnforced",
+    "nonComplianceMessages": [
+      {
+        "policyDefinitionReferenceId": null,
+        "message": "NON-Compliance for this: bs-aps-DenyEncryptInTransitSSLEnforced."
+      }
+    ]
+  },
+  "assignment": {
+    "name": "Assign-EncrypSSL-Rafa",
+    "displayName": "bs-aps-DenyEncryptInTransitSSLEnforced Assign",
+    "description": "Assign Azure Database for MySQL flexible servers supports connecting your Azure Database for MySQL flexible servers to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+  },
+  "children": [
+    {
+      "nodeName": "/child-0",
+      "metadata": {
+        "assignedBy": "epac/23f63b83-5f1a-4fd1-a596-87ac2d713db6/epac-dev",
+        "category": "Custom"
+      },
+      "scope": {
+        "epac-dev": [
+          "/providers/Microsoft.Management/managementGroups/epac-dev"
+        ]
+      }
+    },
+    {
+      "nodeName": "/child-1",
+      "metadata": {
+        "assignedBy": "epac/23f63b83-5f1a-4fd1-a596-87ac2d713db6/epac-prod",
+        "category": "Custom"
+      },
+      "scope": {
+        "epac-prod": [
+          "/providers/Microsoft.Management/managementGroups/epac-prod"
+        ]
+      }
+    }
+  ]
+}
