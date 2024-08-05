@@ -44,18 +44,20 @@ jobs:
         script: |
           const { owner, repo } = context.repo
           const { number } = context.issue
-          await github.rest.issues.createComment({
-            owner,
-            repo,
-            issue_number: number,
-            body: 'Please review the plan and approve the workflow if everything is correct.'
-          })
-          await github.rest.actions.createWorkflowApproval({
-            owner,
-            repo,
-            run_id: context.runId,
-            event_type : 'APPROVE'
-          })
+          if (number) {
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: number,
+              body: 'Please review the plan and approve the workflow if everything is correct.'
+            })
+            await github.rest.actions.createWorkflowApproval({
+              owner,
+              repo,
+              run_id: context.runId,
+              event_type : 'APPROVE'
+            })
+          }
 
   deployPolicy:
     name: Deploy epac-prod Policy Changes
