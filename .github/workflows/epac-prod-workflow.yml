@@ -72,7 +72,7 @@ jobs:
 
   deployRoles:
     name: Deploy epac-prod Role Changes
-    needs: plan
+    needs: [plan,approval]
     if: needs.plan.outputs.deployRoleChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-roles.yml
     with:
