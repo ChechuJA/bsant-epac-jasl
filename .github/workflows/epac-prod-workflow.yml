@@ -31,12 +31,14 @@ jobs:
     secrets: inherit
 
   approval:
+    name: ApprovalRequest
+    needs: plan
     runs-on: ubuntu-latest
     environment:
       name: ApprovalRequired
     steps:
       - name: Plan step
-        run: echo "This step will require approval before it runs"
+        run: echo "This step will require approval before it runs. Please, review EPAC-PLAN"
   
   # approval :
   #   runs-on: ubuntu-latest
