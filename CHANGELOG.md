@@ -1,3 +1,4 @@
+voy a cerar un conflicto aposta a ver que pasa y como se ve en github.
 esto es una prueba pra ver que pasa con el merge.
 La idea es tener dos ramas y un main
 cada persona trabaja con una rama distinta y un main de partida igual.
