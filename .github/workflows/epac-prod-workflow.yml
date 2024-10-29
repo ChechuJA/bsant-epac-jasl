@@ -29,35 +29,45 @@ jobs:
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
-  
-  approval :
-    runs-on: ubuntu-latest
+
+  approval:
+    name: ApprovalRequest
     needs: plan
-    steps :
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-    - name: Wait for approval
-      uses: actions/github-script@v5
-      with :
-        script: |
-          const { owner, repo } = context.repo
-          const { number } = context.issue
-          if (number) {
-            await github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number: number,
-              body: 'Please review the plan and approve the workflow if everything is correct.'
-            })
-            await github.rest.actions.createWorkflowApproval({
-              owner,
-              repo,
-              run_id: context.runId,
-              event_type : 'APPROVE'
-            })
-          }
+    runs-on: ubuntu-latest
+    environment:
+      name: ApprovalRequired
+    steps:
+      - name: Plan step
+        run: echo "This step will require approval before it runs. Please, review EPAC-PLAN"
+  
+  # approval :
+  #   runs-on: ubuntu-latest
+  #   needs: plan
+  #   steps :
+  #   - name: Use Node.js 16
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: 16
+  #   - name: Wait for approval
+  #     uses: actions/github-script@v5
+  #     with :
+  #       script: |
+  #         const { owner, repo } = context.repo
+  #         const { number } = context.issue
+  #         if (number) {
+  #           await github.rest.issues.createComment({
+  #             owner,
+  #             repo,
+  #             issue_number: number,
+  #             body: 'Please review the plan and approve the workflow if everything is correct.'
+  #           })
+  #           await github.rest.actions.createWorkflowApproval({
+  #             owner,
+  #             repo,
+  #             run_id: context.runId,
+  #             event_type : 'APPROVE'
+  #           })
+  #         }
 
   deployPolicy:
     name: Deploy epac-prod Policy Changes
